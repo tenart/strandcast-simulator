@@ -5,6 +5,7 @@ export default class Render {
     }
 
     initView() {
+        $(root).empty();
         let x = 50;
         let y = 50;
         this.drawNode(this.simulator.getSource(), x, y);
