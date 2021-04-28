@@ -99,4 +99,8 @@ export default class Simulator {
     getLinks() {
         return this.links;
     }
+
+    popLink() {
+        this.links.pop();
+    }
 }

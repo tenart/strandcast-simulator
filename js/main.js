@@ -10,9 +10,9 @@ $(function() {
     const strandCast = new Simulator();
     const view = new Render($("#root"), strandCast);
 
-    strandCast.addPeer({type: "peer", id: "Peer_A"});
-    strandCast.addPeer({type: "peer", id: "Peer_B"});
-    strandCast.addPeer({type: "peer", id: "Peer_C"});
+    // strandCast.addPeer({type: "peer", id: String(getRandomInt(1000,9999))});
+    // strandCast.addPeer({type: "peer", id: String(getRandomInt(1000,9999))});
+    // strandCast.addPeer({type: "peer", id: String(getRandomInt(1000,9999))});
     // strandCast.addPeer({type: "peer", id: "Peer_D"});
     // strandCast.addPeer({type: "peer", id: "Peer_E"});
     // strandCast.addPeer({type: "peer", id: "Peer_F"});
@@ -31,10 +31,17 @@ $(function() {
     })
 
     $("button").click(() => {
-        strandCast.addPeer({type: "peer", id: "Peer_D"});
+        strandCast.addPeer({type: "peer", id: String(getRandomInt(1000,9999))});
+        strandCast.popLink();
         strandCast.startStrand();
         view.initView();
         // alert("ADDING");
     })
     
 });
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

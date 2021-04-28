@@ -7,7 +7,7 @@ export default class Render {
     initView() {
         $(root).empty();
         let x = 50;
-        let y = 50;
+        let y = 100;
         this.drawNode(this.simulator.getSource(), x, y);
         this.simulator.getPeers().forEach((node) => {
             this.drawNode(node, x+=150, y+=getRandomInt(20,100));
