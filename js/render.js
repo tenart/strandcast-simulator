@@ -62,6 +62,7 @@ export default class Render {
     }
 
     drawEdge(edge) {
+        $("#"+edge.getID()).remove();
         let html = $($.parseHTML(`
             <div id="${edge.getID()}" class="edge">
                 <div class="edgeStretcher"></div>
